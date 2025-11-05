@@ -1,6 +1,6 @@
 # MetroPath – Console-Based Delhi Metro Route and Fare Finder
 
-MetroPath is a Java-based console application that simulates the Delhi Metro railway network. It enables users to determine the shortest route, travel time, and fare between any two metro stations. The application utilizes graph data structures and pathfinding algorithms such as Dijkstra’s algorithm, Breadth-First Search (BFS), and Depth-First Search (DFS) to provide efficient routing results. This system also accounts for interchanges between different metro corridors and supports user-friendly input modes including station names, codes, and serial numbers.
+MetroPath is a C++-based console application that simulates the Delhi Metro railway network. It enables users to determine the shortest route, travel time, and fare between any two metro stations. The application utilizes graph data structures and pathfinding algorithms such as Dijkstra's algorithm, Breadth-First Search (BFS), and Depth-First Search (DFS) to provide efficient routing results. This system also accounts for interchanges between different metro corridors and supports user-friendly input modes including station names, codes, and serial numbers.
 
 ---
 
@@ -14,13 +14,12 @@ MetroPath is a Java-based console application that simulates the Delhi Metro rai
 - [Program Architecture](#program-architecture)
 - [Algorithms Implemented](#algorithms-implemented)
 - [Sample Output](#sample-output)
-- [Author](#author)
 
 ---
 
 ## Project Overview
 
-MetroPath simulates a metro transportation system using object-oriented design and graph algorithms. Stations are modeled as graph vertices and connections between them as weighted edges. The edge weights represent either the physical distance between stations or estimated travel times. A custom min-heap implementation is used in conjunction with Dijkstra’s algorithm for accurate shortest path computations.
+MetroPath simulates a metro transportation system using object-oriented design and graph algorithms. Stations are modeled as graph vertices and connections between them as weighted edges. The edge weights represent either the physical distance between stations or estimated travel times. A custom min-heap implementation is used in conjunction with Dijkstra's algorithm for accurate shortest path computations.
 
 The application provides a text-based menu allowing users to list stations, view the metro map, and compute optimal routes based on distance or time. It also includes logic for computing interchanges between lines and calculating total fare.
 
@@ -43,19 +42,20 @@ The application provides a text-based menu allowing users to list stations, view
 
 ## Technologies Used
 
-- **Java** – Core programming language
-- **Data Structures** – Graph, Heap, HashMap, ArrayList, Queue
-- **Algorithms** – Dijkstra’s Algorithm, BFS, DFS
-- **Java I/O** – BufferedReader for interactive console input
-- **Custom Classes** – Graph, Vertex, Heap, DijkstraPair, Pair
+- **C++** – Core programming language (C++11 or later)
+- **Data Structures** – Graph, Heap, unordered_map, vector, list, priority_queue
+- **Algorithms** – Dijkstra's Algorithm, BFS, DFS
+- **C++ I/O** – cin, getline() for interactive console input
+- **Custom Classes** – Graph_M, Vertex, Heap (template-based)
+- **STL Containers** – unordered_map, vector, list, stringstream
 
 ---
 
 ## Installation and Setup
 
 1. Clone the repository or download the source code.
-2. Open the project in any Java IDE (Eclipse, IntelliJ IDEA, NetBeans).
-3. Ensure `Graph_M.java` and `Heap.java` are in the same package or directory.
+2. Ensure you have a C++ compiler installed (g++, clang++, or MSVC).
+3. Ensure `Graph_M.cpp` and `Heap.cpp` are in the same package or directory.
 4. Compile and run `Graph_M.java`.
 
 No external libraries or dependencies are required.
@@ -85,10 +85,11 @@ Users are prompted to input the source and destination stations using either the
 
 ## Program Architecture
 
-- `Graph_M.java`: Core file containing the main method, metro map creation, graph implementation, pathfinding logic, and user interface.
-- `Heap.java`: Custom generic min-heap class used by Dijkstra’s algorithm to prioritize nodes based on cost.
+- `Graph_M.cpp`: Core file containing the main function, metro map creation, graph implementation, pathfinding logic, and user interface.
+- `Heap.cpp`: Custom generic min-heap class used by Dijkstra’s algorithm to prioritize nodes based on cost.
 - Each metro station is modeled as a `Vertex` containing adjacent stations and the respective distances.
-- A HashMap-based graph is used to manage vertices and adjacency lists efficiently.
+- An unordered_map-based graph is used to manage vertices and adjacency lists efficiently.
+- STL containers (vector, list, unordered_map) provide efficient data management.
 
 ---
 
@@ -98,5 +99,37 @@ Users are prompted to input the source and destination stations using either the
 - **Breadth-First Search (BFS)**: Traverses the graph to validate connectivity.
 - **Depth-First Search (DFS)**: Used internally for traversal and alternate route checking.
 - **Custom Min-Heap**: Supports dynamic priority queue operations for Dijkstra’s algorithm.
+
+---
+
+**SAMPLE OUTPUT**
+
+                ****WELCOME TO THE METRO APP*****
+                        ~~LIST OF ACTIONS~~
+
+1. LIST ALL THE STATIONS IN THE MAP
+2. SHOW THE METRO MAP
+3. GET SHORTEST DISTANCE FROM A 'SOURCE' STATION TO 'DESTINATION' STATION
+4. GET SHORTEST TIME TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION
+5. GET SHORTEST PATH (DISTANCE WISE) TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION
+6. GET SHORTEST PATH (TIME WISE) TO REACH FROM A 'SOURCE' STATION TO 'DESTINATION' STATION
+7. EXIT THE MENU
+
+ENTER YOUR CHOICE FROM THE ABOVE LIST (1 to 7) : 3
+
+***********************************************************
+
+List of station along with their codes:
+
+1. Noida Sector 62~B         NS62
+2. Botanical Garden~B        BG
+3. Yamuna Bank~B             YB
+...
+
+ENTER THE SOURCE AND DESTINATION STATIONS
+Noida Sector 62~B
+AIIMS~Y
+
+SHORTEST DISTANCE FROM Noida Sector 62~B TO AIIMS~Y IS 31KM
 
 ---
