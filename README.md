@@ -56,7 +56,7 @@ The application provides a text-based menu allowing users to list stations, view
 1. Clone the repository or download the source code.
 2. Ensure you have a C++ compiler installed (g++, clang++, or MSVC).
 3. Ensure `Graph_M.cpp` and `Heap.cpp` are in the same package or directory.
-4. Compile and run `Graph_M.java`.
+4. Compile and run `Graph_M.cpp`.
 
 No external libraries or dependencies are required.
 
