@@ -1,4 +1,4 @@
-# MetroPath – Console-Based Delhi Metro Route and Fare Finder
+# MetroPath – Console-Based Kolkata Metro Route and Fare Finder
 
 MetroPath is a C++-based console application that simulates the Delhi Metro railway network. It enables users to determine the shortest route, travel time, and fare between any two metro stations. The application utilizes graph data structures and pathfinding algorithms such as Dijkstra's algorithm, Breadth-First Search (BFS), and Depth-First Search (DFS) to provide efficient routing results. This system also accounts for interchanges between different metro corridors and supports user-friendly input modes including station names, codes, and serial numbers.
 
@@ -37,6 +37,53 @@ The application provides a text-based menu allowing users to list stations, view
 - Accepts multiple input modes: station name, station code, or serial number.
 - Implements data structures and algorithms without external libraries.
 - Modular code design for scalability and clarity.
+
+---
+
+## Kolkata Metro Lines
+The application includes the following metro lines:
+
+**Blue Line (Line 1) - B**
+- Route: Dakshineswar ↔ Kavi Subhash
+- Stations: 26
+- Distance: ~27 km
+- Status: Fully operational (India's first metro line)
+- Notable Stations: Esplanade, Park Street, Central, Maidan
+
+**Green Line (Line 2) - G**
+- Route: Howrah Maidan ↔ Salt Lake Sector V
+- Stations: 7
+- Distance: ~11 km
+- Status: Fully operational (includes underwater tunnel under Hooghly River)
+- Notable Stations: Howrah, Esplanade, Sealdah
+
+**Orange Line (Line 6) - O**
+- Route: Kavi Subhash ↔ Hemanta Mukhopadhyay (via New Town)
+- Stations: 9
+- Distance: ~15 km
+- Status: Operational
+- Notable Stations: City Centre, Central Park, IT Centre
+
+**Purple Line (Line 3) - P**
+- Route: Joka ↔ Esplanade
+- Stations: 7
+- Distance: ~10 km
+- Status: Partially operational (Joka to Majerhat operational)
+- Notable Stations: Behala, Taratala, Majerhat
+
+**Yellow Line (Line 5) - Y**
+- Route: Noapara ↔ Baranagar (Airport Line)
+- Stations: 4
+- Distance: ~6 km
+- Status: Operational (opened August 2025)
+- Notable Stations: Biman Bandar (Airport), Jai Hind
+
+**Major Interchange Stations**
+- Esplanade (Blue, Green, Purple) - Central hub
+- Park Street (Blue, Purple) - Cultural center
+- Kavi Subhash (Blue, Orange) - Southern terminal
+- Salt Lake Sector V (Green, Orange) - IT hub
+- Noapara (Blue, Yellow) - Northern junction
 
 ---
 
@@ -121,15 +168,27 @@ ENTER YOUR CHOICE FROM THE ABOVE LIST (1 to 7) : 3
 
 List of station along with their codes:
 
-1. Noida Sector 62~B         NS62
-2. Botanical Garden~B        BG
-3. Yamuna Bank~B             YB
+1. Dakshineswar~B             DK
+2. Baranagar~BP               BR
+3. Noapara~BY                 NP
+4. Dum Dum~B                  DD
+5. Esplanade~BGP              ES
+6. Park Street~BP             PS
 ...
 
 ENTER THE SOURCE AND DESTINATION STATIONS
-Noida Sector 62~B
-AIIMS~Y
+Howrah~G
+Central~B
 
-SHORTEST DISTANCE FROM Noida Sector 62~B TO AIIMS~Y IS 31KM
+SOURCE STATION : Howrah~G
+DESTINATION STATION : Central~B
+DISTANCE : 8KM
+NUMBER OF INTERCHANGES : 2
+~~~~~~~~~~~~~
+START  ==>  Howrah~G
+Mahakaran~G
+Esplanade~BGP ==> Chandni Chowk~B
+Central~B   ==>    END
+~~~~~~~~~~~~~
 
 ---
